@@ -1,0 +1,261 @@
+/* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root{
+    --navbar-height: 60px;
+}
+
+/* Navigation Bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+#navbar::before{
+    content: "";
+    background-color: rgb(1, 1, 24);
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Navigation Bar: Logo and Image */
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    height: 60px;
+    margin: 3px 6px;
+}
+
+
+/* Navigation Bar: List Styling */
+
+#navbar ul{
+    display: flex;
+    font-family: 'Potta One', cursive;
+}
+
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: rgb(218, 198, 20);
+    background-color: rgb(11, 190, 245);
+}
+
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding:3px 200px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before{ 
+    content: "";
+    position: absolute;
+    background: url('img/bg1.jpg') no-repeat center center/cover;
+    height: 642px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.80;
+}
+
+#home h1{
+    color:rgb(233, 211, 12);
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#home p{
+    color:white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Bikes Section */
+#bike{
+    margin: 34px;
+    display: flex;
+}
+#bike .box{ 
+    border: 5px solid rgb(231, 228, 10);
+    padding: 50px;
+    margin: 2px 10px;
+    border-radius: 28px;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+#bike .box img{ 
+   height: 160px;
+   margin: auto;
+   display: block;
+}
+
+#bike .box p{
+    font-family: 'Josefin Sans', sans-serif;
+} 
+
+
+
+/* Extra Section */
+#extra{
+    margin: 40px;
+    display: flex;
+}
+#extra .box{ 
+    border: 5px solid rgb(231, 228, 10);
+    padding: 38px;
+    margin: 1px 20px;
+    border-radius: 30px;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+#extra .box img{ 
+   height: 160px;
+   margin: auto;
+  padding: 40px;
+
+}
+
+
+/* About us  Section */
+#aboutus{
+    padding-top: 100px;
+    height: 500px;
+    background-color: #f5ca3d;
+    text-align: center;
+    position: relative;
+   
+}
+
+#aboutus img{
+    height: 160px;
+    margin: auto;  
+ }
+ 
+
+
+/* Contact Section */
+#contact{
+    background-color: aquamarine;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+}
+
+#contact .box img{
+    display: block; 
+    height: 160px;
+    margin: auto;
+    
+ }
+
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+
+
+/* Utility Classes */
+.h-primary{
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+
+.h-secondary{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.3rem;
+    padding: 5px;
+}
+
+.btnlogin{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: rgb(12, 53, 236);
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+
+.btnsignup{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: rgb(247, 7, 7);
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+
+.btnbike{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: rgb(247, 151, 7);
+    color: white;
+    margin: 20px;
+    margin-left: 100px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+
+.btnextra{
+    padding: 6px 5px;
+    border: 2px solid white;
+    background-color: rgb(247, 151, 7);
+    color: white;
+    margin: 5px;
+    margin-left: 58px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+
+.center{
+    text-align: center;
+}

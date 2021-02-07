@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(228, 243, 15);
+}
+
+.btn.active {
+  background-color: rgb(23, 194, 236);
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1>CLASSIC  BIKES</h1>
+<hr>
+
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> ALL BIKE </button>
+  <button class="btn" onclick="filterSelection('honda')"> HONDA </button>
+  <button class="btn" onclick="filterSelection('hero')"> HERO </button>
+  <button class="btn" onclick="filterSelection('bajaj')"> BAJAJ </button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column honda">
+    <div class="content">
+    <img src="img/hondab1.jpg" alt="honda" style="width:100%">
+      <h4>HONDA CG 120</h4>
+      <p>Rs. 45,000 </p>
+    </div>
+  </div>
+
+  <div class="column honda">
+    <div class="content">
+    <img src="img/hondab2.png" alt="honda" style="width:100%">
+      <h4>HONDA CD 110 </h4>
+      <p>Rs. 60,000 </p>
+    </div>
+  </div>
+
+
+  <div class="column honda">
+    <div class="content">
+    <img src="img/hondab3.jpg" alt="honda" style="width:100%">
+      <h4>HONDA UNICORN  </h4>
+      <p>Rs. 75,000 </p>
+    </div>
+  </div>
+  
+  <div class="column hero">
+    <div class="content">
+      <img src="img/herob1.jpg" alt="hero" style="width:100%">
+      <h4>HERO SPLENDAR </h4>
+      <p>Rs. 2,00,000 </p>
+    </div>
+  </div>
+  <div class="column hero">
+    <div class="content">
+    <img src="img/herob2.jpg" alt="hero" style="width:100%">
+      <h4>HERO PASSION PRO </h4>
+      <p>Rs. 52,000 </p>
+    </div>
+  </div>
+  <div class="column hero">
+    <div class="content">
+    <img src="img/herob3.jpg" alt="hero" style="width:100%">
+      <h4>HERO  i SMART</h4>
+      <p>Rs. 65,000 </p>
+    </div>
+  </div>
+
+  <div class="column bajaj">
+    <div class="content">
+      <img src="img/bajajb1.png" alt="bajaj" style="width:100%">
+      <h4>BAJAJ  V15 </h4>
+      <p>Rs. 75,000 </p>
+    </div>
+  </div>
+  <div class="column bajaj">
+    <div class="content">
+    <img src="img/bajajb2.png" alt="bajaj" style="width:100%">
+      <h4>BAJAJ DISCOVER 110 </h4>
+      <p>Rs. 55,000 </p>
+    </div>
+  </div>
+  <div class="column bajaj">
+    <div class="content">
+    <img src="img/bajajb3.jpg" alt="bajaj" style="width:100%">
+      <h4>BAJAJ DISCOVER 125  </h4>
+      <p>Rs. 65,000 </p>
+    </div>
+  </div>
+<!-- GRID -->
+</div>
+
+<!-- MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+  }
+}
+
+function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button 
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
